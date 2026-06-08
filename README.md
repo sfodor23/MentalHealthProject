@@ -23,8 +23,8 @@ Not completed yet:
 ## Project Structure
 
 - `src/Preprocessing.py`: Main preprocessing script
-- `Input/SuicideData.csv`: Input dataset (not currently saved in codebase due to issues with Github file limits)
-- `Output/ProcessedData.csv`: Generated preprocessed dataset
+- `Input/SuicideData.csv`: Input dataset (not currently saved in codebase)
+- `Output/ProcessedData.csv`: Generated preprocessed dataset (not currently saved in codebase)
 - `suicide-detection-using-reddit-data.ipynb`: Notebook (not the active completed workflow)
 
 ## Requirements
@@ -54,4 +54,5 @@ The script downloads NLTK stopwords if needed and writes the cleaned CSV to `Out
 ## Notes
 
 - The dataset is not tracked in Git and must be downloaded from https://www.kaggle.com/code/nouranmuhammad/suicide-detection-using-reddit-data
+-input and output folders are not automatically included in the codebase
 - Current work is focused on data cleaning only; model files are not yet part of the active pipeline.
