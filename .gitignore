@@ -23,5 +23,7 @@ dist/
 .DS_Store
 Thumbs.db
 
-# Project data files (too large for regular GitHub)
-input/suicide-watch/Suicide_Detection.csv
+
+# Project data (local only)
+Input/*.csv
+Output/*.csv

@@ -1,39 +1,57 @@
 # MentalHealthProject
 
-Rudimentary notebook project for suicide detection text classification using Reddit data.
+Text preprocessing pipeline for suicide detection data from Reddit.
+
+## Current Status
+
+Preprocessing is implemented and working.
+
+Completed:
+- Loaded dataset from `Input/SuicideData.csv`
+- Keep first one-third of rows for faster experimentation
+- Remove optional `Index` column
+- Clean text (regex cleanup, contraction expansion, lowercasing)
+- Split merged words with `wordninja`
+- Remove stopwords and lemmatize
+- Save processed output to `Output/ProcessedData.csv`
+
+Not completed yet:
+- Model training
+- Evaluation/metrics reporting
+- Final inference pipeline
 
 ## Project Structure
 
-- `suicide-detection-using-reddit-data.ipynb`: Main analysis and modeling notebook.
-- `input/suicide-watch/`: Local data folder (ignored by Git).
+- `src/Preprocessing.py`: Main preprocessing script
+- `Input/SuicideData.csv`: Input dataset (not currently saved in codebase due to issues with Github file limits)
+- `Output/ProcessedData.csv`: Generated preprocessed dataset
+- `suicide-detection-using-reddit-data.ipynb`: Notebook (not the active completed workflow)
 
-## Dataset
+## Requirements
 
-This project expects the CSV file at:
+Install at least:
+- pandas
+- nltk
+- contractions
+- wordninja
 
-`input/suicide-watch/Suicide_Detection.csv`
-
-Note: The dataset is intentionally not tracked in Git because it is too large for standard GitHub limits.
-
-## Quick Start
-
-1. Create and activate a virtual environment.
-2. Install dependencies (minimum):
-   - pandas
-   - numpy
-   - scikit-learn
-   - nltk
-   - matplotlib
-   - tabulate
-3. Launch Jupyter and open the notebook:
+Example install:
 
 ```bash
-jupyter notebook suicide-detection-using-reddit-data.ipynb
+pip install pandas nltk contractions wordninja
 ```
+
+## Run Preprocessing
+
+From project root:
+
+```bash
+python src/Preprocessing.py
+```
+
+The script downloads NLTK stopwords if needed and writes the cleaned CSV to `Output/ProcessedData.csv`.
 
 ## Notes
 
-- Downloaded NLTK resources in the notebook may include:
-  - `vader_lexicon`
-  - `stopwords`
-- Keep large data files in `input/` and out of Git history.
+- The dataset is not tracked in Git and must be downloaded from https://www.kaggle.com/code/nouranmuhammad/suicide-detection-using-reddit-data
+- Current work is focused on data cleaning only; model files are not yet part of the active pipeline.
